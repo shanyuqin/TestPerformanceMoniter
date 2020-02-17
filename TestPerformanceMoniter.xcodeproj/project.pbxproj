@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		943457E823FAE588001681FB /* PerformanceMoniter.m in Sources */ = {isa = PBXBuildFile; fileRef = 943457E623FAE588001681FB /* PerformanceMoniter.m */; };
+		943457EF23FAE735001681FB /* CrashReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 943457EE23FAE734001681FB /* CrashReporter.framework */; };
 		9479850623F3029300F427B5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9479850523F3029300F427B5 /* AppDelegate.m */; };
 		9479850923F3029300F427B5 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9479850823F3029300F427B5 /* SceneDelegate.m */; };
 		9479850C23F3029300F427B5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9479850B23F3029300F427B5 /* ViewController.m */; };
@@ -36,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		943457E623FAE588001681FB /* PerformanceMoniter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerformanceMoniter.m; sourceTree = "<group>"; };
+		943457E723FAE588001681FB /* PerformanceMoniter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerformanceMoniter.h; sourceTree = "<group>"; };
+		943457EB23FAE704001681FB /* CrashReporter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CrashReporter.framework; path = ../../PerformanceMonitor/PerformanceMonitor/CrashReporter.framework; sourceTree = "<group>"; };
+		943457EE23FAE734001681FB /* CrashReporter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CrashReporter.framework; path = TestPerformanceMoniter/CrashReporter.framework; sourceTree = "<group>"; };
 		9479850123F3029300F427B5 /* TestPerformanceMoniter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestPerformanceMoniter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9479850423F3029300F427B5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9479850523F3029300F427B5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -61,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				943457EF23FAE735001681FB /* CrashReporter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +88,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		943457ED23FAE734001681FB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				943457EE23FAE734001681FB /* CrashReporter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		947984F823F3029300F427B5 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +103,7 @@
 				9479851F23F3029500F427B5 /* TestPerformanceMoniterTests */,
 				9479852A23F3029500F427B5 /* TestPerformanceMoniterUITests */,
 				9479850223F3029300F427B5 /* Products */,
+				943457ED23FAE734001681FB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,12 +120,15 @@
 		9479850323F3029300F427B5 /* TestPerformanceMoniter */ = {
 			isa = PBXGroup;
 			children = (
+				943457EB23FAE704001681FB /* CrashReporter.framework */,
 				9479850423F3029300F427B5 /* AppDelegate.h */,
 				9479850523F3029300F427B5 /* AppDelegate.m */,
 				9479850723F3029300F427B5 /* SceneDelegate.h */,
 				9479850823F3029300F427B5 /* SceneDelegate.m */,
 				9479850A23F3029300F427B5 /* ViewController.h */,
 				9479850B23F3029300F427B5 /* ViewController.m */,
+				943457E723FAE588001681FB /* PerformanceMoniter.h */,
+				943457E623FAE588001681FB /* PerformanceMoniter.m */,
 				9479850D23F3029300F427B5 /* Main.storyboard */,
 				9479851023F3029500F427B5 /* Assets.xcassets */,
 				9479851223F3029500F427B5 /* LaunchScreen.storyboard */,
@@ -268,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9479850C23F3029300F427B5 /* ViewController.m in Sources */,
+				943457E823FAE588001681FB /* PerformanceMoniter.m in Sources */,
 				9479850623F3029300F427B5 /* AppDelegate.m in Sources */,
 				9479851723F3029500F427B5 /* main.m in Sources */,
 				9479850923F3029300F427B5 /* SceneDelegate.m in Sources */,
@@ -439,7 +459,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TestPerformanceMoniter",
+				);
 				INFOPLIST_FILE = TestPerformanceMoniter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -455,7 +480,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TestPerformanceMoniter",
+				);
 				INFOPLIST_FILE = TestPerformanceMoniter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
